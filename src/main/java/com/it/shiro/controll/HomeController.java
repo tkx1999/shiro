@@ -50,6 +50,9 @@ public class HomeController {
         subject.getSession().setAttribute("user", user);
         return "SUCCESS";
     }
+   @GetMapping("/outlogin")
+    public void outlogin(){}
+
 
     @GetMapping("register")
     public Object register(@RequestParam String username, @RequestParam String password) {
