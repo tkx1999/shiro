@@ -1,23 +1,19 @@
-server:
-  port: 8080
 spring:
-  application:
-    name: shiro
+  #配置数据源
   datasource:
-    url:  jdbc:mysql://127.0.0.1:3306/shiro?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/activity?useUnicode=true&characterEncoding=utf-8
     username: root
     password: 1234
-    driver-class-name: com.mysql.jdbc.Driver
-  jpa:
-    database: mysql
-    showSql: true
-    hibernate:
-      ddlAuto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-        format_sql: true
-
+  #禁止缓存
+  thymeleaf:
+    cache: false
+mybatis:
+  #pojo包别名
+  type-aliases-package: com.it.activiti.activiti.pojo
+  configuration:
+    #懒加载
+    lazy-loading-enabled: false
   # activiti配置
   activiti:
     # true  代表没有表就自动创建
@@ -29,6 +25,6 @@ spring:
     # （可选）默认流程定义文件存放目录
     process-definition-location-prefix: classpath:/processes/
 logging:
-  #日志
+    #日志
   config: classpath:log/logback-spring.xml
   path: /LogBack
