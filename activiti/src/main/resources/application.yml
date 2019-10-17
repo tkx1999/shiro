@@ -15,7 +15,7 @@ mybatis:
     #懒加载
     lazy-loading-enabled: false
   # activiti配置
-  activiti:
+   activiti:
     # true  代表没有表就自动创建
     database-schema-update: true
     # 记录级别,默认audit
@@ -25,6 +25,6 @@ mybatis:
     # （可选）默认流程定义文件存放目录
     process-definition-location-prefix: classpath:/processes/
 logging:
-    #日志
+  #日志
   config: classpath:log/logback-spring.xml
   path: /LogBack
